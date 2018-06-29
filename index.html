@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <title>Prototypes, Context, Closures</title>
+    </head>
+    
+    <body>
+        <form>
+            <input type="text" name="something">
+            <button type="submit">
+                Submit
+            </button>
+        </form>
+        
+        <script>
+            const form = document.querySelector('form');
+            
+            const input = document.querySelector('input');
+            
+            function submitHandler(e) {
+                e.preventDefault();
+                debugger;
+                // What is `this`?
+                console.log(this);
+            }
+            
+            const changeHandler = (e) => {
+                debugger;
+                // what is `this`?
+                console.log(this);
+            };
+            
+            form.addEventListener('submit', submitHandler, false);
+            input.addEventListener('change', changeHandler, false);
+        </script>
+    </body>
+</html>
